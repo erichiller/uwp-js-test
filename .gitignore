@@ -1,0 +1,7 @@
+build
+.vscode
+_*
+.*
+*.log
+node_modules
+!.gitignore
