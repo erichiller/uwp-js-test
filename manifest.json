@@ -1,0 +1,30 @@
+// {
+//   "lang": "en",
+//   "dir": "ltr",
+//   "name": "UWP JS TEST",
+//   "description": "Trying out UWP with JS",
+//   "short_name": "uwpJSapp",
+//   "icons": [{
+//     "src": "resources/icon/moon.png",
+//     "sizes": "512x512",
+//     "type": "image/png"
+//   }],
+//   "scope": "/src",
+//   "start_url": "/main.html",
+//   "display": "fullscreen",
+//   "orientation": "landscape",
+//   "theme_color": "aliceblue",
+//   "background_color": "red"
+// }
+// App capability declarations for Windows 10:
+//  https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations 
+//  
+// Special capabilities require review (and possibly) Company accounts before entering the windows store
+// - documentsLibrary
+//  <Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>
+//  _documentsLibrary_ REQUIRES a company account AND store review
+// - userDataSystem 
+//  The userDataSystem restricted capability allows apps to access the user data system datastore. 
+// - cortanaSpeechAccessory 
+//  The cortanaSpeechAccessory restricted capability allows apps to invoke and pass commands to Cortana.
+

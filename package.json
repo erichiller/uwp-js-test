@@ -1,0 +1,48 @@
+{
+  "name": "uwp-js-test",
+  "author": "Eric D Hiller",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "description": "testing windows native cpp electron",
+  "homepage": "",
+  "keywords": [],
+  "repository": {},
+  "bugs": {},
+  "main": "bin/main.js",
+  "scripts": {
+    "precompile_17": "cmake-js clean -c \"C:\\Users\\ehiller\\AppData\\Local\\omega\\system\\cmake\\bin\\cmake.exe\" -G \"Visual Studio 15 2017 Win64\"",
+    "compile_17": "cmake-js build -c \"C:\\Users\\ehiller\\AppData\\Local\\omega\\system\\cmake\\bin\\cmake.exe\" -G \"Visual Studio 15 2017 Win64\"",
+    
+    "compile_VS": "cmake-js build -G \"Visual Studio 15 2017 Win64\"",
+
+    "precompile": "cmake-js clean -c \"C:\\Users\\ehiller\\AppData\\Local\\omega\\system\\cmake\\bin\\cmake.exe\" -G\"Visual Studio 14 2015 Win64\"",
+    "compile": "cmake-js build -c \"C:\\Users\\ehiller\\AppData\\Local\\omega\\system\\cmake\\bin\\cmake.exe\" -G\"Visual Studio 14 2015 Win64\"",
+
+    
+    "build": "node .\\node_modules\\typescript\\bin\\tsc",
+    "postbuild": "copyfiles -f ./src/index.html bin",
+    "prestart": "npm run build",
+    "start": "electron bin/main.js",
+    "prepublish": "npm run compile && npm run build",
+    "qdist-win32-x64": "npm run build && electron-packager . --out=dist --platform=win32 --arch=x64 --overwrite",
+    "qdist-all": "npm run build && electron-packager . --out=dist --platform=all --arch=all --overwrite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "cmake-js": "^3.4.0",
+    "nan": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.4.32",
+    "copyfiles": "^1.2.0",
+    "electron": "^1.4.15",
+    "electron-packager": "^8.5.1",
+    "typescript": "^2.1.6"
+  },
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "1.4.5",
+    "arch": "x64"
+  }
+}
