@@ -63,15 +63,26 @@ cmake_minimum_required(VERSION 3.7)
 ##
 ################################################################################
 
-set(lib "winsearch")
-file(GLOB SOURCE_FILES "src/module/winSearch/*.cpp" "src/module/winSearch/*.h")
+
+
+# set( CMAKE_BUILD_TYPE Release )
+# set( CMAKE_RUNTIME_OUTPUT_DIRECTORY "C:/Users/ehiller/dev/github.com/erichiller/uwp-js-test/build" )
+
+# info RUN cmake "C:\Users\ehiller\dev\github.com\erichiller\uwp-js-test" --no-warn-unused-cli -G"Visual Studio 14 2015 Win64" -DCMAKE_JS_VERSION="3.4.1" -DCMAKE_BUILD_TYPE="Release" -DCMAKE_RUNTIME_OUTPUT_DIRECTORY="C:\Users\ehiller\dev\github.com\erichiller\uwp-js-test\build" -DCMAKE_JS_INC="C:\Users\ehiller\.cmake-js\electron-x64\v1.4.5\src;C:\Users\ehiller\.cmake-js\electron-x64\v1.4.5\deps\v8\include;C:\Users\ehiller\.cmake-js\electron-x64\v1.4.5\deps\uv\include;C:\Users\ehiller\dev\github.com\erichiller\uwp-js-test\node_modules\nan" -DNODE_RUNTIME="electron" -DNODE_RUNTIMEVERSION="1.4.5" -DNODE_ARCH="x64" -DCMAKE_JS_LIB="C:\Users\ehiller\.cmake-js\electron-x64\v1.4.5\x64\node.lib"
+# Not searching for unused variables given on the command line.
+
+
+
+set(lib "winsearch" )
+file(GLOB SOURCE_FILES "src/module/winSearch/*.cpp" "src/module/winSearch/*.h" )
 
 add_library( ${lib} SHARED ${SOURCE_FILES})
 # target_link_libraries( ${lib} "C:/Program Files (x86)/Windows Kits/10/UnionMetadata/Windows.winmd" )
 
 
 # set( CMAKE_VS_PLATFORM_TOOLSET "Windows10SDK" )
-set( CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION "10.0.14393.0" )
+# set( CMAKE_VS_PLATFORM_NAME UAP )
+# set( CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION "10.0.14393.0" )
 
 set( prepend "EDH_!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!_" )
 MESSAGE( "${prepend}platform=${CMAKE_VS_PLATFORM_NAME}" )

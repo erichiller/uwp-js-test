@@ -15,8 +15,9 @@
     
     "compile_VS": "cmake-js build -G \"Visual Studio 15 2017 Win64\"",
 
-    "precompile": "cmake-js clean -c \"C:\\Users\\ehiller\\AppData\\Local\\omega\\system\\cmake\\bin\\cmake.exe\" -G\"Visual Studio 14 2015 Win64\"",
-    "compile": "cmake-js build -c \"C:\\Users\\ehiller\\AppData\\Local\\omega\\system\\cmake\\bin\\cmake.exe\" -G\"Visual Studio 14 2015 Win64\"",
+    "precompile": "cmake-js clean -G\"Visual Studio 14 2015 Win64\"",
+    "compile2": "cmake-js build -G\"Visual Studio 14 2015 Win64\" --CDCMAKE_SYSTEM_NAME=WindowsStore --CDCMAKE_SYSTEM_VERSION='10.0'",
+    "compile": "cmake-js build -G\"Visual Studio 14 2015 Win64\" --CDCMAKE_SYSTEM_NAME=WindowsStore --CDCMAKE_SYSTEM_VERSION='10.0'",
 
     
     "build": "node .\\node_modules\\typescript\\bin\\tsc",
